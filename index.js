@@ -1,6 +1,6 @@
 var express = require('express')
 var app = express()
-var knex = require('../db/knex')
+var knex = require('./db/knex')
 var cors = require('cors')
 
 app.use(cors());

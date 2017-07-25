@@ -11,4 +11,12 @@ app.get('/resource', function(req, res){
   })
 });
 
+app.get('/resource/:id', function(req, res){
+  let id = req.params.id;
+  knex('resource').where('id', id).first()
+  .then(resource => {
+    res.json(resource)
+  })
+});
+
 app.listen(process.env.PORT || 8080);

@@ -1,10 +1,10 @@
 
 exports.seed = function(knex, Promise) {
-  return knex.raw('DELETE FROM "resource"; ALTER SEQUENCE resource_id_seq RESTART WITH 3;')
+  return knex.raw('DELETE FROM "resource"; ALTER SEQUENCE resource_id_seq RESTART WITH 1;')
 
   .then(function(){
     var resources = [{
-      id: 1,
+      // id: 1,
       title: 'Introduction to SQL',
       type: 'Learn Article',
       link: 'https://learn.galvanize.com/content/gSchool/sql-curriculum/master/Introduction.md',
@@ -12,7 +12,7 @@ exports.seed = function(knex, Promise) {
       dateCreated: new Date(),
       quarter: 2
     }, {
-      id: 2,
+      // id: 2,
       title: 'Entity Relationship Diagrams',
       type: 'Learn Article',
       link: 'https://learn.galvanize.com/content/gSchool/sql-curriculum/master/Entity%20Relationship%20Diagrams.md',
@@ -20,7 +20,7 @@ exports.seed = function(knex, Promise) {
       dateCreated: new Date(),
       quarter: 2
     }, {
-      id: 3,
+      // id: 3,
       title: 'SQL Zoo',
       type: 'Exercise',
       link: 'http://sqlzoo.net/',
@@ -28,7 +28,7 @@ exports.seed = function(knex, Promise) {
       dateCreated: new Date(),
       quarter: 2
     }, {
-      id: 4,
+      // id: 4,
       title: 'Coolors',
       type: 'Tool',
       link: 'https://coolors.co/',
@@ -36,7 +36,7 @@ exports.seed = function(knex, Promise) {
       dateCreated: new Date(),
       quarter: 1,
     }, {
-      id: 5,
+      // id: 5,
       title: 'Wireframe.cc',
       type: 'Tool',
       link: 'https://wireframe.cc/',
@@ -44,7 +44,7 @@ exports.seed = function(knex, Promise) {
       dateCreated: new Date(),
       quarter: 1
     }, {
-      id: 6,
+      // id: 6,
       title: 'Flexbox Froggy',
       type: 'Exercise',
       link: 'http://flexboxfroggy.com/',

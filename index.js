@@ -29,7 +29,7 @@ app.post('/resource', (req, res) => {
 		.then(resource => {
 			res.json({
         resource: resource,
-        message: "Success! The id is " + resource[0].id + "!"
+        message: "success"
 	});
 })
 })

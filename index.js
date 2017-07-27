@@ -27,18 +27,41 @@ app.post('/resource', (req, res) => {
 	knex('resource').insert(post)
 		.returning('*')
 		.then(resource => {
-			res.json({
-        resource: resource,
-        message: "success"
-	    });
+			res.json({ message: "success"});
     })
 })
 
 app.delete('/resource/:id', (req, res) => {
-  console.log(req.params.id);
   knex('resource').where('id', req.params.id).del()
   .then(function (){
     res.json({message: "success"})
+  })
+})
+
+app.put('/resource/:id', (req, res) => {
+  let id = req.params.id
+  let edit = req.body
+  var editedTitle = req.body.title
+  var editedLink = req.body.link
+  var editedType = req.body.type
+  var editedDescription = req.body.description
+  var editedQuarter = req.body.quarter
+  var editedDateCreated = req.body.dateCreated
+
+  console.log(req.body);
+  knex('resource').where('id', id).update({
+     title: editedTitle,
+     type: editedType,
+     link: editedLink,
+     description: editedDescription,
+     dateCreated: editedDateCreated,
+     quarter: editedQuarter
+  })
+  .returning('id')
+  .then( function(edited){
+    res.json({
+      edited: edited,
+      message: "success"})
   })
 })
 

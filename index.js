@@ -30,8 +30,16 @@ app.post('/resource', (req, res) => {
 			res.json({
         resource: resource,
         message: "success"
-	});
+	    });
+    })
 })
+
+app.delete('/resource/:id', (req, res) => {
+  console.log(req.params.id);
+  knex('resource').where('id', req.params.id).del()
+  .then(function (){
+    res.json({message: "success"})
+  })
 })
 
 app.listen(process.env.PORT || 8080);

@@ -18,6 +18,10 @@ app.get('/resource/:id', function(req, res){
   let id = req.params.id;
   knex('resource').where('id', id).first()
   .then(resource => {
+    res.json({
+      resource: resource,
+      message: "success"
+    })
   })
 });
 

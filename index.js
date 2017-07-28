@@ -26,7 +26,9 @@ app.post('/resource', (req, res) => {
 	knex('resource').insert(post)
 		.returning('*')
 		.then(resource => {
-			res.json({ message: "success"});
+			res.json({
+        resource:resource,
+        message: "success"});
     })
 })
 
